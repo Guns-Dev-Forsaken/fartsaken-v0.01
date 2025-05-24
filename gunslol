@@ -9,7 +9,7 @@ local KeyCheckingButtonSex
 local ApiStatusCode
 local KEY_FILE = "fartkey.txt"
 local STATUS_MESSAGES = {
-	KEY_VALID = "Key valid! Loading script...",
+	KEY_VALID = "nice fam! the key is valid. loading the script now!!",
 	KEY_HWID_LOCKED = "HWID Mismatch. Please get a new Key!.",
 	KEY_INCORRECT = "just get renew key or get key man.",
 }
@@ -539,7 +539,7 @@ local function makeUI()
 			elseif progress < 0.6 then
 				LoadingText.Text = "Authenticating..."
 			elseif progress < 0.9 then
-				LoadingText.Text = "This totaly does something..."
+				LoadingText.Text = "Key Invaild Please Renew Your Key!.. Just Kidding!"
 			else
 				LoadingText.Text = "Authenticated."
 			end
@@ -744,7 +744,7 @@ if key and key ~= "" then
 			return ScreenGui
 		end
 
-		MakeNotificatione("Welcome", "Script access valid! Loading script...", 3)
+		MakeNotificatione("hi", "Script access valid! Loading script...", 3)
 		task.delay(0.5, function()
 			local timeLeftSecs = status.data.auth_expire - os.time()
 			local hours = math.floor(timeLeftSecs / 3600)
